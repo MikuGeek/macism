@@ -3,15 +3,15 @@ import Foundation
 @main
 struct MacISM {
     static func main() {
-        // Initialize input sources
-        InputSourceManager.initialize()
-
         if CommandLine.arguments.contains(where: { arg in
             arg.caseInsensitiveCompare("--version") == .orderedSame
         }) {
             print("v3.0.10")
             return
         }
+
+        // Initialize input sources
+        InputSourceManager.initialize()
 
         if CommandLine.arguments.count == 1 {
             let currentSource = InputSourceManager.getCurrentSource()
